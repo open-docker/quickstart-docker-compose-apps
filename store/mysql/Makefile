@@ -12,7 +12,7 @@ DATA_SUF = $(shell date +"%Y.%m.%d.%H.%M.%S")
 
 PROJ_NAME := $(shell basename $(CURDIR))-server
 
-EXEC := sh
+EXEC := bash
 
 -include ./.env
 -include ../../yh-prod.env
@@ -46,10 +46,10 @@ rebuild-then-start: stop init-dir
 # 	init-dir: 
 # ####################################
 init-dir:
-	# 创建数据目录
+	# 创建数据目录(-dLf), 也可以直接-e来判存
 	$(DC) config | grep ":rw$$" | grep -o " /[^:]*" | grep "/[^.]*$$" | grep -o "[^ ]*" | while read x; do \
 		echo "verify dir/link $$x"; \
-		[ -d "$$x" -o -L "$$x" ] || mkdir -p "$$x"; \
+		[ -d "$$x" -o -L "$$x" -o -f "$$x" ] || mkdir -p "$$x"; \
 		echo $$x; \
 	done;
 

@@ -2,8 +2,7 @@
 
 # DATA-DIR-BEGIN
 data
-
-../../../../log/nexus
+log
 
 # DATA-DIR-END
 
