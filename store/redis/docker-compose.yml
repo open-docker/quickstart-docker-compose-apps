@@ -14,9 +14,10 @@ version: '3'
 services:
   redis:
     image: redis:4.0-alpine
-    container_name: dev-redis
+    container_name: redis-server
     command: redis-server --appendonly yes
     volumes:
-      - ./redis/data:/data # 数据文件目录
+      - /etc/localtime:/etc/localtime
+      - ${XDC_REDIS_DATA:-./data}:/data/db
     ports:
-      - 56379:6379
+      - ${REDIS_PORT:-6379}:6379

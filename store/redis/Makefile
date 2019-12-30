@@ -1,5 +1,5 @@
 # ####################################
-# Name: mysql 
+# Name: mongo
 # FileVersion: 20191230
 # ####################################
 
@@ -12,7 +12,7 @@ DATA_SUF = $(shell date +"%Y.%m.%d.%H.%M.%S")
 
 PROJ_NAME := $(shell basename $(CURDIR))-server
 
-EXEC := bash
+EXEC := sh
 
 -include ./.env
 -include ../../yh-prod.env
