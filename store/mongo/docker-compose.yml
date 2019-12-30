@@ -10,4 +10,4 @@ services:
       - /etc/localtime:/etc/localtime
       - ${XDC_MONGO_DATA:-./data}:/data/db
     ports:
-      - ${MYSQL_PORT:-27017}:27017
+      - ${MONGO_PORT:-27017}:27017
