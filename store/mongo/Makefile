@@ -29,7 +29,7 @@ down:
 	$(DC) down
 config:
 	$(DC) config
-start-fg:
+start-fg: init-dir
 	$(DC) up
 
 sh:
