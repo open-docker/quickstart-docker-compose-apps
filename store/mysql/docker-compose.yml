@@ -45,6 +45,6 @@ services:
       - ${XDC_MYSQL_DATA:-./data}:/var/lib/mysql
       - ${XDC_MYSQL_LOG:-./log}:/var/log/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-cn1949}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-passwd}
     ports:
       - ${MYSQL_PORT:-3306}:3306
